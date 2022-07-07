@@ -1,10 +1,16 @@
+:root{
+    --page-bgc: rgb(104, 26, 26);
+    --border-color: rgb(255, 228, 74);
+    --content-bgc: rgb(240, 86, 86);
+}
+
 * {
     margin: 0;
     text-align: center;
 }
 
 body{
-    background-color: aquamarine;
+    background-color: var(--page-bgc);
     width: min(100%, 1000px);
     margin: auto;
 }
@@ -17,8 +23,8 @@ body{
     padding: 0.5rem 0;
     margin-bottom: 2rem;
 
-    border: 3px solid gold;
-    background-color: rgb(114, 177, 156);
+    border: 3px solid var(--border-color);
+    background-color: var(--content-bgc);
 }
 
 #header > * > h1{
@@ -48,20 +54,23 @@ body{
     gap: 3rem;
 }
 
+/* HOME PAGE */
 #home-content{
     display: grid;
     grid-template-areas: 
         "news about"
+        "hours about"
         "address about";
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.1rem;
 }
 
 #home-content > div{
     padding: 1rem;
 
-    border: 3px solid gold;
-    background-color: rgb(114, 177, 156);
+    border: 3px solid var(--border-color);
+    background-color: var(--content-bgc);
 }
 
 #home-content > #about{
@@ -69,6 +78,7 @@ body{
 
     font-size: 1.3rem;
 }
+
 #home-content > #news{
     grid-area: news;
 
@@ -78,6 +88,11 @@ body{
 
     font-size: 1.2rem;
 }
+
+#home-content > #hours{
+    grid-area: hours;
+}
+
 #home-content > #address{
     grid-area: address;
 
@@ -88,27 +103,29 @@ body{
 }
 
 
-/* MENU */
+/* MENU PAGE */
 #menu-content{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* gap: 1rem 0; */
+    justify-content: center;
+    gap: .1rem;
 }
 
 .menu-item{
     width: 300px;
     margin: auto;
-    border: 3px solid gold;
-    background-color: rgb(114, 177, 156);
+
+    border: 3px solid var(--border-color);
+    background-color: var(--content-bgc);
 
     font-size: 1.3rem;
     font-weight: bold;
 }
 
-/* Contact */
+/* CONTACT PAGE */
 #contact-content{
-    background-color: rgb(114, 177, 156);
-    border: 3px solid gold;
+    border: 3px solid var(--border-color);
+    background-color: var(--content-bgc);
     padding: 1rem 0;
 }
 
