@@ -3,16 +3,70 @@
     text-align: center;
 }
 
-#header{
-    display: flex;
-    justify-content: center;
-    padding: 5rem;
+body{
+    background-color: aquamarine;
 }
 
-#home-content{
+#header{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 3rem;
+    padding: 0.5rem 0;
+    margin-bottom: 5rem;
+
+    border: 3px solid gold;
+    background-color: rgb(114, 177, 156);
+}
+
+#header > * > h1{
+    font-size: 3rem;
+}
+
+#header > ul{
+    list-style-type: none;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+
+    font-size: 1.5rem;
+}
+
+#header > ul > li:hover {
+    text-decoration: underline;
+}
+
+#title-holder{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
+}
+
+#home-content{
+    display: grid;
+    grid-template-areas: 
+        "news about"
+        "address about";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#home-content > div{
+
+    border: 3px solid gold;
+    background-color: rgb(114, 177, 156);
+
+}
+
+#home-content > #about{
+    grid-area: about;
+}
+#home-content > #news{
+    grid-area: news;
+}
+#home-content > #address{
+    grid-area: address;
 }

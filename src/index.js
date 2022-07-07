@@ -1,37 +1,51 @@
 import './style.css';
-import ProfilePic from './eldritch_pizza_chef.png';
+import homePage from './home-page';
 
-console.log("heyo");
 
-function homePage(){
-    var holder = document.createElement('div');
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+  
+const images = importAll(require.context('./header-images', false, /\.(png|jpe?g|svg)$/));
 
-    // HEADER
+function header(){
     let header = document.createElement('div');
     header.id = 'header';
+
+    // LINKS
+    let links = document.createElement('ul');
+    let home = '<li>Home</li>';
+    let menu = '<li>Menu</li>';
+    let about = '<li>About</li>';
+    links.innerHTML = home + menu + about;
+    header.appendChild(links);
+
+    // TITLE
+    let titleHolder = document.createElement('div');
+    titleHolder.id = 'title-holder';
+
+    let picA = new Image();
+    picA.src = images['eldritch_pizza_chef.png'];
+    titleHolder.appendChild(picA);
+
     let title = document.createElement('h1');
     title.textContent = 'Fakerino\'s';
-    header.appendChild(title);
-    holder.appendChild(header);
+    titleHolder.appendChild(title);
 
-    // CONTENT
-    let homeContent = document.createElement('div');
-    homeContent.id = 'home-content';
-    homeContent.innerHTML = 'The best and totally real pizza place!<br>Made with reality and pizza ingredients!';
+    let picB = new Image();
+    picB.src = images['eldritch_pizza_logo.png'];
+    titleHolder.appendChild(picB);
 
-    let profilePicture = new Image();
-    profilePicture.src = ProfilePic;
-    profilePicture.style = '"width: 256px; height: 256px;"';
-    homeContent.appendChild(profilePicture);
+    header.appendChild(titleHolder);
 
-    holder.appendChild(homeContent);
-
-    return holder;
+    return header;
 }
 
 function buildPage(){
     const content = document.querySelector('#content');
-    
+    content.appendChild(header());
     content.appendChild(homePage());
 }
 
