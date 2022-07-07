@@ -1,14 +1,14 @@
 import './style.css';
 import homePage from './home-page';
+import menuPage from './menu-page';
 
-
-function importAll(r) {
+function importAllImages(r) {
     let images = {};
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
     return images;
 }
   
-const images = importAll(require.context('./header-images', false, /\.(png|jpe?g|svg)$/));
+const images = importAllImages(require.context('./header-images', false, /\.(png|jpe?g|svg)$/));
 
 function header(){
     let header = document.createElement('div');
@@ -47,6 +47,7 @@ function header(){
 
     let picA = new Image();
     picA.src = images['eldritch_pizza_chef.png'];
+    picA.style = '"width: 256; height: 256;"';
     titleHolder.appendChild(picA);
 
     let title = document.createElement('h1');
@@ -55,6 +56,7 @@ function header(){
 
     let picB = new Image();
     picB.src = images['eldritch_pizza_logo.png'];
+    picB.style = '"width: 256; height: 256;"'
     titleHolder.appendChild(picB);
 
     header.appendChild(titleHolder);
@@ -70,7 +72,9 @@ function buildPage(page){
     console.log(`Building: ${page}`);
     if(page === 'home'){
         content.appendChild(homePage());
+    } else if(page === 'menu'){
+        content.appendChild(menuPage());
     }
 }
 
-buildPage('home');
+buildPage('menu');

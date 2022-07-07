@@ -86,3 +86,21 @@ body{
     align-items: center;
     font-size: 1.4rem;
 }
+
+
+/* MENU */
+#menu-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* gap: 1rem 0; */
+}
+
+.menu-item{
+    width: 300px;
+    margin: auto;
+    border: 3px solid gold;
+    background-color: rgb(114, 177, 156);
+
+    font-size: 1.3rem;
+    font-weight: bold;
+}
