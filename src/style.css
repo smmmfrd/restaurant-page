@@ -5,6 +5,8 @@
 
 body{
     background-color: aquamarine;
+    width: min(100%, 1000px);
+    margin: auto;
 }
 
 #header{
@@ -13,7 +15,7 @@ body{
     justify-content: center;
     gap: 3rem;
     padding: 0.5rem 0;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 
     border: 3px solid gold;
     background-color: rgb(114, 177, 156);
@@ -55,18 +57,31 @@ body{
 }
 
 #home-content > div{
+    padding: 1rem;
 
     border: 3px solid gold;
     background-color: rgb(114, 177, 156);
-
 }
 
 #home-content > #about{
     grid-area: about;
+
+    font-size: 1.3rem;
 }
 #home-content > #news{
     grid-area: news;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    font-size: 1.2rem;
 }
 #home-content > #address{
     grid-area: address;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
 }

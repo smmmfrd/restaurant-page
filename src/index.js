@@ -31,7 +31,7 @@ function header(){
     titleHolder.appendChild(picA);
 
     let title = document.createElement('h1');
-    title.textContent = 'Fakerino\'s';
+    title.innerHTML = 'Fakerino\'s<br>Pizza<br>and Others';
     titleHolder.appendChild(title);
 
     let picB = new Image();
