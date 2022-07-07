@@ -104,3 +104,16 @@ body{
     font-size: 1.3rem;
     font-weight: bold;
 }
+
+/* Contact */
+#contact-content{
+    background-color: rgb(114, 177, 156);
+    border: 3px solid gold;
+    padding: 1rem 0;
+}
+
+#contact-content > div{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}

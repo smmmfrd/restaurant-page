@@ -1,6 +1,7 @@
 import './style.css';
 import homePage from './home-page';
 import menuPage from './menu-page';
+import contactPage from './contact-page';
 
 function importAllImages(r) {
     let images = {};
@@ -74,7 +75,9 @@ function buildPage(page){
         content.appendChild(homePage());
     } else if(page === 'menu'){
         content.appendChild(menuPage());
+    } else if(page === 'contact'){
+        content.appendChild(contactPage());
     }
 }
 
-buildPage('menu');
+buildPage('home');
