@@ -25,10 +25,7 @@ body{
     font-size: 3rem;
 }
 
-#header > ul{
-    list-style-type: none;
-    padding: 0;
-
+#links{
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -36,7 +33,11 @@ body{
     font-size: 1.5rem;
 }
 
-#header > ul > li:hover {
+#links > div{
+    user-select: none;
+}
+
+#links > div:hover {
     text-decoration: underline;
 }
 

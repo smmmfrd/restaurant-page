@@ -15,11 +15,30 @@ function header(){
     header.id = 'header';
 
     // LINKS
-    let links = document.createElement('ul');
-    let home = '<li>Home</li>';
-    let menu = '<li>Menu</li>';
-    let about = '<li>About</li>';
-    links.innerHTML = home + menu + about;
+    let links = document.createElement('div');
+    links.id = 'links';
+
+    let home = document.createElement('div');
+    home.textContent = 'Home';
+    home.addEventListener('click', () =>{
+        buildPage('home');
+    });
+    links.appendChild(home);
+
+    let menu = document.createElement('div');
+    menu.textContent = 'Menu';
+    menu.addEventListener('click', () =>{
+        buildPage('menu');
+    });
+    links.appendChild(menu);
+
+    let contact = document.createElement('div');
+    contact.textContent = 'Contact';
+    contact.addEventListener('click', () =>{
+        buildPage('contact');
+    });
+    links.appendChild(contact);
+    
     header.appendChild(links);
 
     // TITLE
@@ -43,10 +62,15 @@ function header(){
     return header;
 }
 
-function buildPage(){
+function buildPage(page){
     const content = document.querySelector('#content');
+    content.innerHTML = '';
     content.appendChild(header());
-    content.appendChild(homePage());
+
+    console.log(`Building: ${page}`);
+    if(page === 'home'){
+        content.appendChild(homePage());
+    }
 }
 
-buildPage();
+buildPage('home');
